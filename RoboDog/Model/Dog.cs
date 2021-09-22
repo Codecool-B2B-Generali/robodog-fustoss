@@ -9,13 +9,13 @@ namespace RoboDog.Model
     public class Dog
     {
         [Required(ErrorMessage = "Age is required")]
-        public int Age { get; set; }
+        public int? Age { get; set; }
 
         [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Breed is required")]
-        public Breeds Breed { get; set; }
+        public Breeds? Breed { get; set; }
 
         public enum Breeds { Bullog, Bolognese, Setter, Kuvasz }
     }

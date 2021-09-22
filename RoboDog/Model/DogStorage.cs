@@ -27,14 +27,12 @@ namespace RoboDog.Model
         {
             var dogCreator = new DogCreator();
             var randomDog = dogCreator.CreateRandomDog();
-            if (Dogs[randomDog.Name] == null)
+            while  (Dogs[randomDog.Name] != null)
             {
-                Dogs.Add(randomDog.Name, randomDog);
-                return randomDog;
-            }else
-            {
-                return null;
+                randomDog = dogCreator.CreateRandomDog();
             }
+            Dogs.Add(randomDog.Name, randomDog);
+            return randomDog;
         }
 
         public SortedList GetAllDogs()

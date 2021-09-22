@@ -4,6 +4,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace RoboDog.Controllers
@@ -47,7 +49,8 @@ namespace RoboDog.Controllers
             }
             else
             {
-                return Ok(result);
+                //return Ok(result);
+                return Created("", result);
             }
         }
  //add by name
@@ -59,7 +62,8 @@ namespace RoboDog.Controllers
                 return Ok(tempDog);
             }else
             {
-                return NotFound();
+                //return BadRequest("Dog alredy exists");
+                return Conflict();
             }
         }
 //set data
