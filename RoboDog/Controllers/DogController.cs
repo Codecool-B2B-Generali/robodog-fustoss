@@ -63,7 +63,10 @@ namespace RoboDog.Controllers
             }else
             {
                 //return BadRequest("Dog alredy exists");
-                return Conflict();
+                //return Conflict();
+                ModelState.AddModelError("Error", "Dog alredy exists");
+                return BadRequest(ModelState);
+
             }
         }
 //set data
